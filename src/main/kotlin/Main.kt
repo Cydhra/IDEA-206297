@@ -1,14 +1,14 @@
 import kotlin.TODO as BlowUp
 
 fun main() {
-    registerHandler(
+    registerHandler(handlers = *arrayOf(
         { _ ->
             Unit
         },
         { _ ->
             Unit
             Unit
-        }
+        })
     )
 }
 
