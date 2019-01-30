@@ -1,5 +1,3 @@
-import kotlin.TODO as BlowUp
-
 fun main() {
     registerHandler(*arrayOf(
         { _ ->
@@ -7,11 +5,20 @@ fun main() {
         },
         { _ ->
             Unit
-            Unit
+        })
+    )
+
+    // in case of named arguments, the arrayOf syntax is required
+    registerHandler(handlers = *arrayOf(
+        { _ ->
+
+        },
+        { _ ->
+
         })
     )
 }
 
 fun registerHandler(vararg handlers: (String) -> Unit) {
-    BlowUp()
+    handlers.forEach { it.invoke("hello") }
 }
